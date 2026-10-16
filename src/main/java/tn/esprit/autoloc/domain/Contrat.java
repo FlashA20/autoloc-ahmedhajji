@@ -28,9 +28,8 @@ public class Contrat {
     @Column(nullable = false)
     private boolean valide;
 
-    @Column(name = "client_id", nullable = false, unique = true)
-    private Long clientId;
-
-    @Column(name = "reservation_id", nullable = false, unique = true)
-    private Long reservationId;
+    @OneToOne
+    private Reservation reservation;
+    @OneToMany (mappedBy = "contrat" , cascade = CascadeType.ALL, orphanRemoval = true, fetch =  FetchType.EAGER)
+    private java.util.List<Paiement> paiements;
 }

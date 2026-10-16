@@ -25,7 +25,6 @@ public class Maintenance {
 
     @Column(length = 255)
     private String description;
-
-    @Column(name = "vehicule_id", nullable = false)
-    private Long vehiculeId;
+    @ManyToOne
+    Vehicule vehicule;
 }

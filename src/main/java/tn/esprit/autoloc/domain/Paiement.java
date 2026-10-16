@@ -29,6 +29,6 @@ public class Paiement {
     @Column(nullable = false, length = 20)
     private ModePaiement modePaiement;
 
-    @Column(name = "contrat_id", nullable = false)
-    private Long contratId;
+    @ManyToOne
+    private Contrat contrat;
 }

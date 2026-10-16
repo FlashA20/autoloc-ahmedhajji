@@ -24,13 +24,13 @@ public class Reservation {
     @Column(nullable = false)
     private LocalDate dateFin;
 
-    @Column(name = "client_id", nullable = false)
-    private Long clientId;
-
-    @Column(name = "vehicule_id", nullable = false)
-    private Long vehiculeId;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private StatutReservation statut;
+    @ManyToOne
+    private Client client;
+    @ManyToOne
+    private Vehicule vehicule;
+    @OneToOne(mappedBy = "reservation")
+    private Contrat contrat;
 }

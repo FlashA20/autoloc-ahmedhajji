@@ -23,9 +23,8 @@ public class Employe {
     private String prenom;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 20)
-    private RoleEmploye role;
-
-    @Column(name = "agence_id", nullable = false)
-    private Long agenceId;
+    @Column(name = "role", nullable = false, length = 20)
+    private RoleEmploye roleEmploye;
+    @ManyToOne
+    private Agence agence;
 }

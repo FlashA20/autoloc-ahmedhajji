@@ -40,6 +40,12 @@ public class Vehicule {
     @Column(nullable = false, length = 20)
     private StatutVehicule statut;
 
-    @Column(name = "agence_id")
-    private Long agenceId;
+    @ManyToOne
+    Agence agence;
+
+    @ManyToMany
+    private java.util.List<Equipement> equipements;
+
+    @OneToMany (mappedBy = "vehicule")
+    private java.util.List<Reservation> reservations;
 }

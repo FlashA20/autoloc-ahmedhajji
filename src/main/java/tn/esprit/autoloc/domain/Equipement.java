@@ -18,4 +18,6 @@ public class Equipement {
 
     @Column(nullable = false, unique = true, length = 80)
     private String libelle;
+    @ManyToMany (mappedBy = "equipements")
+    private java.util.List<Vehicule> vehicules;
 }
